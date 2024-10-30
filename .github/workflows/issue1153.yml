@@ -1,0 +1,19 @@
+name: issue1153
+on:
+  workflow_dispatch:
+jobs:
+  tests:
+    name: 'Tests | Node ${{ matrix.node-version }} | ${{ matrix.os }}'
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      matrix:
+        os: [ubuntu, macos, windows]
+        node-version: ['lts/*', 'lts/-1', 'lts/-2']
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          check-latest: true
