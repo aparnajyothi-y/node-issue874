@@ -2,21 +2,18 @@ name: issue873
 on:
   workflow_dispatch:
 jobs:
-  test_frontend:
+  build:
     runs-on: macos-latest
-
-    strategy:
-      matrix:
-        node-version: ['>=21.2']
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Node ${{ matrix.node }}
-        uses: actions/setup-node@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
-          check-latest: true
-          
+          node-version: 'latest'
+          cache: yarn
+
     
     
