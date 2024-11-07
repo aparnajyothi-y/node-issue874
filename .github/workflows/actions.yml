@@ -1,9 +1,10 @@
-name: issue852
+name: actions
 on:
   workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Use composite action
         uses: ./.github/actions/issue852
