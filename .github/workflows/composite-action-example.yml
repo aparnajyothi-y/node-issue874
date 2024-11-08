@@ -7,5 +7,5 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Use composite action
-        uses: ./.github/actions/composite-action
+      - name: Set up Node.js
+        uses: gowridurgad/test-setup-node@main
