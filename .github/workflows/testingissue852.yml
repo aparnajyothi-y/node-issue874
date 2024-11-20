@@ -5,6 +5,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Check GitHub Action Path
+      run: |
+          echo "GITHUB_ACTION_PATH = ${{ github.action_path }}"
     - uses: actions/checkout@v4
     - name: Set up Node.js
       uses: aparnajyothi-y/setup-node@use-absolute-path
