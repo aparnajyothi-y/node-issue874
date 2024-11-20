@@ -5,9 +5,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Check GitHub Action Path
+    - name: Debug Environment Variables
       run: |
-          echo "GITHUB_ACTION_PATH = ${{ github.action_path }}"
+          echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
+          echo "github.action_path = ${{ github.action_path }}"
+        
     - uses: actions/checkout@v4
     - name: Set up Node.js
       uses: aparnajyothi-y/setup-node@use-absolute-path
