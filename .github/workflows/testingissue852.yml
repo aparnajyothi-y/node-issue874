@@ -12,11 +12,8 @@ jobs:
     
     - uses: actions/checkout@v4
 
-    - name: Debug Action Path
-      run: |
-        echo "GitHub Action Path: ${{ github.action_path }}"
-        echo "Looking for .nvmrc at: ${{ github.action_path }}/.nvmrc"
-        ls -l ${{ github.action_path }}
+    - name: Run Composite Action Example
+      uses: ./.github/actions/composite-action  # This is where you invoke the composite action
     
     - name: Set up Node.js
       uses: aparnajyothi-y/setup-node@use-absolute-path
