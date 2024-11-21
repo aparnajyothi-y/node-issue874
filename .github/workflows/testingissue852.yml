@@ -14,5 +14,4 @@ jobs:
 
     - name: Set up Node.js
       uses: aparnajyothi-y/setup-node@use-absolute-path
-      with:
-        node-version-file: ./.nvmrc
+      
